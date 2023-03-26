@@ -1,0 +1,288 @@
+API Contract:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: POST /meeting
+
+Request body:
+{
+"date": "YYYY-MM-DD",
+"start_time": "HH:mm",
+"end_time": "HH:mm",
+"room": "r1"|"r2"|"r3"|"r4"|"r5",
+"participants": ["user_id1", "user_id2", ...],
+"user": "user_id"
+}
+
+Response body:
+{
+"date": "YYYY-MM-DDTHH:mm:ss.sssZ",
+"start_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+"end_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+"room": "r1"|"r2"|"r3"|"r4"|"r5",
+"participants": [
+"user_id1",
+"user_id2",
+...
+],
+"user": "user_id",
+"_id": "meeting_id",
+}
+
+Request Headers:
+Content-Type: application/json
+
+Response Headers:
+
+Content-Type: application/json
+Request Parameters:
+None
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: GET /meeting
+
+Request body:none
+
+Response body:
+[
+  {
+    "_id": "641eaa060a51b91b02fd88e1",
+    "date": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "start_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "end_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "room": "r1"|"r2"|"r3"|"r4"|"r5",
+    "participants": [
+      {
+        "_id": "user_id",
+        "name": String,
+        "email": String,
+        "password": String,
+        "meetings": [
+          "meeting_id1",
+          "meeting_id2"
+        ],
+      },...
+    ],
+    "user": {
+      "_id": "user_id",
+      "name": String,
+      "email": String,
+      "password": String,
+      "meetings": [
+        "meeting_id1",
+        "meeting_id2",...
+      ],
+    },
+  },
+]
+
+Request Headers:
+Content-Type: application/json
+
+Response Headers:
+
+Content-Type: application/json
+Request Parameters:
+None
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: GET /meeting/:id
+
+Request body:none
+
+Response body:
+{
+    "_id": "641eaa060a51b91b02fd88e1",
+    "date": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "start_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "end_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "room": "r1"|"r2"|"r3"|"r4"|"r5",
+    "participants": [
+      {
+        "_id": "user_id",
+        "name": String,
+        "email": String,
+        "password": String,
+        "meetings": [
+          "meeting_id1",
+          "meeting_id2"
+        ],
+      },...
+    ],
+    "user": user_id,
+  },
+
+
+Request Headers:none
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: PUT /meeting/:id
+
+Request body:none
+
+{
+"date": "YYYY-MM-DD",
+"start_time": "HH:mm",
+"end_time": "HH:mm",
+"room": "r1"|"r2"|"r3"|"r4"|"r5",
+"participants": ["user_id1", "user_id2", ...],
+}
+
+Response body:
+{
+    "_id": "641eaa060a51b91b02fd88e1",
+    "date": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "start_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "end_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "room": "r1"|"r2"|"r3"|"r4"|"r5",
+    "participants": [
+      {
+        "_id": "user_id",
+        "name": String,
+        "email": String,
+        "password": String,
+        "meetings": [
+          "meeting_id1",
+          "meeting_id2"
+        ],
+      },...
+    ],
+    "user": user_id,
+  },
+
+Request Headers:
+Content-Type: application/json
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: DELETE /meeting/:id
+
+Request body:none
+
+Response body:
+{
+  "message": "Meeting deleted successfully"
+}
+
+Request Headers:none
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: POST /user
+
+Request body:
+{
+  "name": String,
+  "email": String,
+  "password": String
+}
+
+Response body:
+{
+  "name": String,
+  "email": String,
+  "password": String
+}
+
+Request Headers:
+Content-Type: application/json
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: GET /user
+
+Request body:none
+
+Response body:
+[
+  {
+    "_id": "user_id",
+    "name": String,
+  "email": String,
+  "password": String
+    "meetings": [
+      "meeting_id1", meeting_id2,...
+    ],
+  },
+  {
+    "_id": "user_id",
+    "name": String,
+    "email": String,
+    "password": String
+    "meetings": [
+      "meeting_id1", meeting_id2,...
+    ],
+  },
+]
+
+Request Headers:none
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: GET /user/:id
+
+Request body:none
+
+Response body:
+{
+  "_id": "user_id",
+  "name": String,
+  "email": String,
+  "password": String
+  "meetings": [
+    {
+      "_id": "meeting_id",
+      "date": "YYYY-MM-DDTHH:mm:ss.sssZ",
+      "start_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+      "end_time": "YYYY-MM-DDTHH:mm:ss.sssZ",
+      "room": "r1"|"r2"|"r3"|"r4"|"r5",
+      "participants": [
+        "user_id1",user_id2,...],
+      "user": "user_id",
+    }
+  ],
+}
+
+Response Headers:none
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API endpoint: Delete /user/:id
+
+Request body:none
+
+Response body:
+{
+  "message": "User deleted successfully"
+}
+
+Request Headers:none
+
+Response Headers:
+Content-Type: application/json
+Request Parameters:
+None 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Response Status Codes:
+
+201 Created: The meeting was successfully created.
+400 Bad Request: The request body was invalid and also some more custom error messages if conflict in meetings.
+500 Internal Server Error: A server error occurred while creating the meeting.

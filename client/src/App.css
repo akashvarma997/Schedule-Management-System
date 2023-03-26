@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: antiquewhite;
+  padding: 10px;
+}
+
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+ 
+.Meetings{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.meetingsForm{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+li{
+  list-style-type: none;
+}
+
+.usersList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.meetingsList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+button{
+  margin-left: 10px;
+  padding: 3px;
+}
+
+.modalItems{
+  padding: 10px;
+}
