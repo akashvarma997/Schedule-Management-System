@@ -9,6 +9,12 @@ The frontend interface is simple and intuitive, allowing users to add different 
 
 Overall, the application provides a user-friendly interface and robust backend functionality that ensures scheduling meetings is error-free and efficient.
 
+# How to setup on your System.
+1) Download the code on your system.
+2) change the config_url to the url you are working on present in client/src/config.js.
+3) change the PORT you are working on present in backend/.env
+4) now you are ready to run the application.
+
 To know how the APIs are working, how to send a request and what to expect in response please read the API Contract document.
 
 Demo video of the Application.
