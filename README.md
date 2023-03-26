@@ -8,3 +8,11 @@ To delete a meeting, the API first removes the meeting from the participant's an
 The frontend interface is simple and intuitive, allowing users to add different users, schedule a meeting at a particular date, time, and room, select the user creating the meeting, and choose the participants. Users can also update meetings and delete meetings and users.
 
 Overall, the application provides a user-friendly interface and robust backend functionality that ensures scheduling meetings is error-free and efficient.
+
+To know how the APIs are working, how to send a request and what to expect in response please read the API Contract document.
+
+Demo video of the Application.
+https://youtu.be/wH8DpoNq3XA
+
+Demo video of API's testing.
+https://youtu.be/2rbRwWQ33j8
